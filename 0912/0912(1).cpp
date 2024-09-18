@@ -1,5 +1,4 @@
-//Ä¿¼­ À§Ä¡ Á¦¾î
-
+//ì»¤ì„œ ìœ„ì¹˜ ì œì–´
 #include <stdio.h>
 #include <windows.h>
 void gotoxy(int x, int y);
@@ -17,8 +16,7 @@ int main(void)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
 
-//3´Ü Ãâ·Â
-
+//3ë‹¨ ì¶œë ¥
 #include <stdio.h>
 #include <windows.h>
 void gotoxy(int x, int y);
@@ -39,17 +37,16 @@ void gotoxy(int x, int y)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
 
-//È­¸é Áö¿ì±â
-
+//í™”ë©´ ì§€ìš°ê¸°
 #include <stdio.h>
 #include <stdlib.h>
 int main(void)
 {
 	char ch;
-	printf("¹®ÀÚ¸¦ ÀÔ·ÂÇÏ°í Enter>");
+	printf("ë¬¸ìë¥¼ ì…ë ¥í•˜ê³  Enter>");
 	scanf("%c", &ch);
 	system("cls");
-	printf("ÀÔ·ÂµÈ ¹®ÀÚ %c\n", ch);
+	printf("ì…ë ¥ëœ ë¬¸ì %c\n", ch);
 	return 0;
 }
 
@@ -64,7 +61,7 @@ int main(void)
 		system("cls");
 		for(i=1;i<=9;i++)
 			printf("%d*%d=%d\n", j, i, j*i);
-		printf("¾Æ¹«Å°³ª ´©¸£½Ã¿À.\n");
+		printf("ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ì‹œì˜¤.\n");
 		getch();
 	}
 	return 0;
