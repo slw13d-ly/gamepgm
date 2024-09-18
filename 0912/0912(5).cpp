@@ -1,5 +1,5 @@
-//¹üÀ§ ³»ÀÇ ³­¼ö »ı¼º
-// ÁÖ»çÀ§ ´«±İ ³­¼ö »ı¼º
+//ë²”ìœ„ ë‚´ì˜ ë‚œìˆ˜ ìƒì„±
+// ì£¼ì‚¬ìœ„ ëˆˆê¸ˆ ë‚œìˆ˜ ìƒì„±
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -13,7 +13,7 @@ int main(void)
 	return 0;
 }
 
-// 1ºÎÅÍ 45 ³­¼ö »ı¼º
+// 1ë¶€í„° 45 ë‚œìˆ˜ ìƒì„±
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -27,7 +27,7 @@ int main(void)
 	return 0;
 }
 
-// 1ºÎÅÍ 45 Áßº¹ ¾ø´Â ³­¼ö »ı¼º
+// 1ë¶€í„° 45 ì¤‘ë³µ ì—†ëŠ” ë‚œìˆ˜ ìƒì„±
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -53,7 +53,7 @@ int main(void)
 	return 0;
 }
 
-// 1ºÎÅÍ 45 Áßº¹ ¾ø´Â ³­¼ö »ı¼º - Á¤·Ä
+// 1ë¶€í„° 45 ì¤‘ë³µ ì—†ëŠ” ë‚œìˆ˜ ìƒì„± - ì •ë ¬
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -95,4 +95,3 @@ void selection_sort(int r[], int n)
 	for(i=0;i<=5;i++)
 			printf("%2d\n", r[i]);
 }
-
