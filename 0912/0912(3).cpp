@@ -1,13 +1,12 @@
-
-//±æÀÌ°¡ nÀÎ Ç¥ÁØ Á¤»ç°¢Çü
+//ê¸¸ì´ê°€ nì¸ í‘œì¤€ ì •ì‚¬ê°í˜•
 #include <stdio.h>
 void draw_square(int size);
 int main(void)
 {
 	int n;
-	printf("Á¤»ç°¢Çü ±×¸®±â\n\n");
-	printf("Á¤»ç°¢ÇüÀÇ ±æÀÌ(ÃÖ´ë 37)¸¦\n");
-	printf("ÀÔ·ÂÇÏ°í Enter>");
+	printf("ì •ì‚¬ê°í˜• ê·¸ë¦¬ê¸°\n\n");
+	printf("ì •ì‚¬ê°í˜•ì˜ ê¸¸ì´(ìµœëŒ€ 37)ë¥¼\n");
+	printf("ì…ë ¥í•˜ê³  Enter>");
 	scanf("%d", &n);
 	draw_square(n);
 	return 0;
@@ -39,5 +38,3 @@ void draw_square(int size)
 		printf("%c%c", a, b[5]);
 		printf("\n");
 }
-
-
