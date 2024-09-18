@@ -1,5 +1,4 @@
 //커서 위치 제어
-
 #include <stdio.h>
 #include <windows.h>
 void gotoxy(int x, int y);
@@ -18,7 +17,6 @@ int main(void)
 }
 
 //3단 출력
-
 #include <stdio.h>
 #include <windows.h>
 void gotoxy(int x, int y);
@@ -40,7 +38,6 @@ void gotoxy(int x, int y)
 }
 
 //화면 지우기
-
 #include <stdio.h>
 #include <stdlib.h>
 int main(void)
