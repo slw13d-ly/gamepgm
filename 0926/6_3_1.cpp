@@ -38,7 +38,67 @@ void rotation_right(int m[][3])
 
 void print_direction(void)
 {
-	gotoxy(25, 씀
+	gotoxy(25, 1);
+	printf("화살표:이동,  스페이스 키:회전");
+}
+
+void move_control(int m[][3])
+{
+	char key;
+	do
+	{
+		while(!kbhit())
+		{
+			// system("cls"); 화면이 깜빡이는 것을 수정하기 위해 삭제 
+			move_shape(m);		
+		}
+		key=getch();
+		switch(key)
+		{
+			case 32 : 
+				rotation_right(m);
+				break;
+			case 72 : 
+				inx=0; iny=-1;
+				break;
+			case 75 : 
+				inx=-1; iny=0;
+				break;
+			case 77 : 
+				inx=1; iny=0;
+				break;
+			case 80 : 
+				inx=0; iny=1;
+				break;
+			default :
+				break;
+		}
+	}while(key!=27);
+	printf("\n");
+}
+
+void print_shape(int m[][3])		
+{
+	int i, j;
+	for(i=0;i<3;i++)
+	{
+		gotoxy(x,y+i);
+		for(j=0;j<3;j++)
+			if (m[i][j]==1)
+				printf("□");
+			else
+				printf("  ");
+	}
+}
+
+void clear_shape(int m[][3])		
+{
+	int i, j;
+	for(i=0;i<3;i++)
+	{
+		gotoxy(x,y+i);
+		for(j=0;j<3;j++)
+			printf("  ");  // 빈 공간으로 덮어씀 
 	}
 }
 
