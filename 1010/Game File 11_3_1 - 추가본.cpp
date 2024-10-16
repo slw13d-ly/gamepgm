@@ -15,7 +15,7 @@ void set_color(int color);
 void start_screen();
 void game_intro();
 int select_difficulty();
-int play_again(); // Àç½ÃÀÛ ±â´ÉÀ» À§ÇÑ ÇÔ¼ö ¼±¾ğ
+int play_again(); // ì¬ì‹œì‘ ê¸°ëŠ¥ì„ ìœ„í•œ í•¨ìˆ˜ ì„ ì–¸
 
 int main(void) 
 {
@@ -26,7 +26,7 @@ int main(void)
 
     srand(time(NULL));
 
-    while (1) // Àç½ÃÀÛ ·çÇÁ
+    while (1) // ì¬ì‹œì‘ ë£¨í”„
     {
         count = 0;
         start_screen();
@@ -46,13 +46,13 @@ int main(void)
         } while (count < n * n / 2);
 
         gotoxy(2, 18);
-        printf("¸ğµÎ ¸Â¾Ò½À´Ï´Ù. Á¾·áÇÕ´Ï´Ù.\n");
+        printf("ëª¨ë‘ ë§ì•˜ìŠµë‹ˆë‹¤. ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
         end = clock();
         pst = (end - start) / CLOCKS_PER_SEC;
         minutes = pst / 60;
         seconds = pst - minutes * 60;
         gotoxy(2, 19);
-        printf("°æ°ú½Ã°£ : %ldºĞ %ld ÃÊ\n", minutes, seconds);
+        printf("ê²½ê³¼ì‹œê°„ : %ldë¶„ %ld ì´ˆ\n", minutes, seconds);
         
         if (!play_again())
         {
@@ -67,13 +67,13 @@ int play_again()
 {
     int choice;
     gotoxy(2, 21);
-    printf("°ÔÀÓÀ» ´Ù½Ã ½ÃÀÛÇÏ·Á¸é 1À», Á¾·áÇÏ·Á¸é 0À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ê²Œì„ì„ ë‹¤ì‹œ ì‹œì‘í•˜ë ¤ë©´ 1ì„, ì¢…ë£Œí•˜ë ¤ë©´ 0ì„ ì…ë ¥í•˜ì„¸ìš”: ");
     scanf("%d", &choice);
 
     while (choice != 1 && choice != 0) 
     {
         gotoxy(2, 22);
-        printf("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. 1(Àç½ÃÀÛ) ¶Ç´Â 0(Á¾·á)À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+        printf("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. 1(ì¬ì‹œì‘) ë˜ëŠ” 0(ì¢…ë£Œ)ì„ ì…ë ¥í•˜ì„¸ìš”: ");
         scanf("%d", &choice);
     }
 
@@ -84,25 +84,26 @@ void start_screen()
 {
     system("cls");
     printf("========================================\n");
-    printf("         ¹®ÀÚ ÆÛÁñ ¸ÂÃß±â °ÔÀÓ        \n");
+    printf("         ë¬¸ì í¼ì¦ ë§ì¶”ê¸° ê²Œì„        \n");
     printf("========================================\n");
-    printf("  µÎ °³ÀÇ ¹®ÀÚ¸¦ Ã£´Â ÆÛÁñ °ÔÀÓÀÔ´Ï´Ù.\n");
+    printf("  ë‘ ê°œì˜ ë¬¸ìë¥¼ ì°¾ëŠ” í¼ì¦ ê²Œì„ì…ë‹ˆë‹¤.\n");
     printf("\n");
-    printf("  ¾Æ¹« Å°³ª ´­·¯¼­ ½ÃÀÛÇÏ¼¼¿ä...\n");
+    printf("  ì•„ë¬´ í‚¤ë‚˜ ëˆŒëŸ¬ì„œ ì‹œì‘í•˜ì„¸ìš”...\n");
     getch();
 }
 
 void game_intro() 
 {
     system("cls");
-    printf("  [°ÔÀÓ ¼³¸í]:\n");
-    printf("  ÀÌ °ÔÀÓÀº °İÀÚ ¸ğ¾çÀÇ ÆÇ¿¡ ¼û°ÜÁø µÎ °³ÀÇ ¹®ÀÚ¸¦ Ã£´Â °ÔÀÓÀÔ´Ï´Ù.\n");
-    printf("  »ç¿ëÀÚ´Â ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¿© µÎ °³ÀÇ ¼¿À» ¼±ÅÃÇÏ°í,\n");
-    printf("  ÀÏÄ¡ÇÏ´Â ¹®ÀÚ°¡ ÀÖ´ÂÁö È®ÀÎÇÕ´Ï´Ù.\n");
-	printf("  Æ²¸° È½¼ö°¡ 5¹øÀ» ÃÊ°úÇÏ¸é °ÔÀÓµµ Á¾·áµË´Ï´Ù.\n");
-    printf("  ¹®ÀÚ @¸¦ Ã£À¸¸é °ÔÀÓÀÌ Á¾·áµÇ´Ï, Ã£Áö ¾Êµµ·Ï ÁÖÀÇÇÏ¼¼¿ä.\n");
+    printf("  [ê²Œì„ ì„¤ëª…]:\n");
+    printf("  ì´ ê²Œì„ì€ ê²©ì ëª¨ì–‘ì˜ íŒì— ìˆ¨ê²¨ì§„ ë‘ ê°œì˜ ë¬¸ìë¥¼ ì°¾ëŠ” ê²Œì„ì…ë‹ˆë‹¤.\n");
+    printf("  ì‚¬ìš©ìëŠ” ìˆ«ìë¥¼ ì…ë ¥í•˜ì—¬ ë‘ ê°œì˜ ì…€ì„ ì„ íƒí•˜ê³ ,\n");
+    printf("  ì¼ì¹˜í•˜ëŠ” ë¬¸ìê°€ ìˆëŠ”ì§€ í™•ì¸í•©ë‹ˆë‹¤.\n"); 
+	printf("  í‹€ë¦° íšŸìˆ˜ê°€ 5ë²ˆì„ ì´ˆê³¼í•˜ë©´ ê²Œì„ë„ ì¢…ë£Œë©ë‹ˆë‹¤.\n");
+    printf("  ë¬¸ì @ë¥¼ ì°¾ìœ¼ë©´ ê²Œì„ì´ ì¢…ë£Œë˜ë‹ˆ, ì°¾ì§€ ì•Šë„ë¡ ì£¼ì˜í•˜ì„¸ìš”.\n");
+    printf("  ê²Œì„ì´ ì‹œì‘ë˜ê³  30ì´ˆê°„ ì…ë ¥ì´ ì—†ìœ¼ë©´ ê²Œì„ì´ ì¢…ë£Œë©ë‹ˆë‹¤.\n");
 	printf("\n");
-    printf("  ÁØºñ°¡ µÇ¸é ¾Æ¹« Å°³ª ´©¸£¼¼¿ä...\n");
+    printf("  ì¤€ë¹„ê°€ ë˜ë©´ ì•„ë¬´ í‚¤ë‚˜ ëˆ„ë¥´ì„¸ìš”...\n");
     getch();
 }
 
@@ -110,17 +111,17 @@ int select_difficulty()
 {
     int n;
     system("cls");
-    printf("³­ÀÌµµ ¼±ÅÃ:\n");
-    printf("1. ÇÏ (3Çà)\n");
-    printf("2. Áß (5Çà)\n");
-    printf("3. »ó (7Çà)\n");
-    printf("¿øÇÏ´Â ³­ÀÌµµÀÇ ¼ıÀÚ¸¦ ¼±ÅÃÇÏ°í Enter¸¦ ´©¸£¼¼¿ä: ");
+    printf("ë‚œì´ë„ ì„ íƒ:\n");
+    printf("1. í•˜ (3í–‰)\n");
+    printf("2. ì¤‘ (5í–‰)\n");
+    printf("3. ìƒ (7í–‰)\n");
+    printf("ì›í•˜ëŠ” ë‚œì´ë„ì˜ ìˆ«ìë¥¼ ì„ íƒí•˜ê³  Enterë¥¼ ëˆ„ë¥´ì„¸ìš”: ");
     int choice;
     scanf("%d", &choice);
 
     while (choice < 1 || choice > 3) 
 	{
-        printf("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. 1, 2, 3 Áß¿¡¼­ ¼±ÅÃÇÏ¼¼¿ä: ");
+        printf("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. 1, 2, 3 ì¤‘ì—ì„œ ì„ íƒí•˜ì„¸ìš”: ");
         scanf("%d", &choice);
     }
 
@@ -136,18 +137,18 @@ int select_difficulty()
 void display_rule(int n, char question[][10])
 {
     gotoxy(2, 16);
-    printf("À§¿Í °°Àº °İÀÚ¸ğ¾çÀÇ ¼ıÀÚ µÚ¿¡´Â \n");
+    printf("ìœ„ì™€ ê°™ì€ ê²©ìëª¨ì–‘ì˜ ìˆ«ì ë’¤ì—ëŠ” \n");
     gotoxy(2, 17);
-    printf("°°Àº ¸ğ¾çÀÇ ¹®ÀÚ°¡ µÎ°³¾¿ ¼û¾î ÀÖ½À´Ï´Ù.\n");
+    printf("ê°™ì€ ëª¨ì–‘ì˜ ë¬¸ìê°€ ë‘ê°œì”© ìˆ¨ì–´ ìˆìŠµë‹ˆë‹¤.\n");
     gotoxy(2, 18);
-    printf("¾Æ¹«Å°³ª ´©¸£¸é Á¤´äÈ­¸éÀÌ Àá½Ã ³ªÅ¸³³´Ï´Ù. \n");
+    printf("ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ë©´ ì •ë‹µí™”ë©´ì´ ì ì‹œ ë‚˜íƒ€ë‚©ë‹ˆë‹¤. \n");
 	getch();
     clear_text();
     make_question(n, question);
     gotoxy(2, 16);
-    printf("Á¤´ä È­¸éÀº À§¿Í °°½À´Ï´Ù.\n");
+    printf("ì •ë‹µ í™”ë©´ì€ ìœ„ì™€ ê°™ìŠµë‹ˆë‹¤.\n");
     gotoxy(2, 17);
-    printf("5ÃÊ µÚ¿¡ ¹®Á¦ Ç®ÀÌ¸¦ ½ÃÀÛÇÕ´Ï´Ù.\n");
+    printf("5ì´ˆ ë’¤ì— ë¬¸ì œ í’€ì´ë¥¼ ì‹œì‘í•©ë‹ˆë‹¤.\n");
     Sleep(5000);
     clear_text();
 }
@@ -158,46 +159,46 @@ void game_control(char question[][10], int n, int *count)
     int user1, user2, row1, row2, col1, col2;
     clock_t start_time, current_time;
 
-    start_time = clock();  // ½Ã°£ ½ÃÀÛ
+    start_time = clock();  // ì‹œê°„ ì‹œì‘
     
     gotoxy(2, 16);
-    printf("Ã¹¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ°í Enter>");
+    printf("ì²«ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ê³  Enter>");
 
-    while (!_kbhit())  // »ç¿ëÀÚÀÇ ÀÔ·ÂÀ» ±â´Ù¸®´Â ·çÇÁ
+    while (!_kbhit())  // ì‚¬ìš©ìì˜ ì…ë ¥ì„ ê¸°ë‹¤ë¦¬ëŠ” ë£¨í”„
     {
-        current_time = clock();  // ÇöÀç ½Ã°£ °»½Å
-        if ((current_time - start_time) / CLOCKS_PER_SEC > 30)  // 30ÃÊ°¡ ³Ñ¾ú´ÂÁö È®ÀÎ
+        current_time = clock();  // í˜„ì¬ ì‹œê°„ ê°±ì‹ 
+        if ((current_time - start_time) / CLOCKS_PER_SEC > 30)  // 30ì´ˆê°€ ë„˜ì—ˆëŠ”ì§€ í™•ì¸
         {
             gotoxy(2, 20);
-            printf("30ÃÊ µ¿¾È ÀÔ·ÂÀÌ ¾ø¾î °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n");
+            printf("30ì´ˆ ë™ì•ˆ ì…ë ¥ì´ ì—†ì–´ ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
             exit(0);
         }
     }
 
-    scanf("%d", &user1);  // Ã¹ ¹øÂ° ¼ıÀÚ ÀÔ·Â
-    start_time = clock();  // ½Ã°£ ´Ù½Ã ½ÃÀÛ
+    scanf("%d", &user1);  // ì²« ë²ˆì§¸ ìˆ«ì ì…ë ¥
+    start_time = clock();  // ì‹œê°„ ë‹¤ì‹œ ì‹œì‘
 
     row1 = user1 / n;
     col1 = user1 % n;
     gotoxy(2, 17);
-    printf("µÎ¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ°í Enter>");
+    printf("ë‘ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ê³  Enter>");
 
-    while (!_kbhit())  // µÎ ¹øÂ° ÀÔ·Â ´ë±â
+    while (!_kbhit())  // ë‘ ë²ˆì§¸ ì…ë ¥ ëŒ€ê¸°
     {
         current_time = clock();
         if ((current_time - start_time) / CLOCKS_PER_SEC > 30)
         {
             gotoxy(2, 20);
-            printf("30ÃÊ µ¿¾È ÀÔ·ÂÀÌ ¾ø¾î °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n");
+            printf("30ì´ˆ ë™ì•ˆ ì…ë ¥ì´ ì—†ì–´ ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
             exit(0);
         }
     }
 
-    scanf("%d", &user2);  // µÎ ¹øÂ° ¼ıÀÚ ÀÔ·Â
+    scanf("%d", &user2);  // ë‘ ë²ˆì§¸ ìˆ«ì ì…ë ¥
     row2 = user2 / n;
     col2 = user2 % n;
 
-    // ÀÌÈÄÀÇ °ÔÀÓ ·ÎÁ÷Àº ±âÁ¸ ÄÚµå¿Í µ¿ÀÏ
+    // ì´í›„ì˜ ê²Œì„ ë¡œì§ì€ ê¸°ì¡´ ì½”ë“œì™€ ë™ì¼
     if (question[row1][col1] == '@') 
     {   
         set_color(12);
@@ -207,7 +208,7 @@ void game_control(char question[][10], int n, int *count)
         printf("%2c", question[row2][col2]);
         set_color(7);
         gotoxy(2, 20);
-        printf("@±âÈ£¸¦ Ã£¾Ò½À´Ï´Ù. °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n");
+        printf("@ê¸°í˜¸ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤. ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
         exit(0);
     }
 
@@ -220,7 +221,7 @@ void game_control(char question[][10], int n, int *count)
         printf("%2c", question[row2][col2]);
         set_color(7);
         gotoxy(2, 20);
-        printf("@±âÈ£¸¦ Ã£¾Ò½À´Ï´Ù. °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n");
+        printf("@ê¸°í˜¸ë¥¼ ì°¾ì•˜ìŠµë‹ˆë‹¤. ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
         exit(0);
     }
 
@@ -228,7 +229,7 @@ void game_control(char question[][10], int n, int *count)
     {
         *count += 1;
         gotoxy(32, 4);
-        printf("¸ÂÀº °³¼ö:%2d°³(ÃÑ %2d°³)", *count, n * n / 2);
+        printf("ë§ì€ ê°œìˆ˜:%2dê°œ(ì´ %2dê°œ)", *count, n * n / 2);
 
         set_color(10);
         gotoxy(3 + 4 * col1, 2 + 2 * row1);
@@ -241,7 +242,7 @@ void game_control(char question[][10], int n, int *count)
         gotoxy(2, 16);
         printf("                                                 ");
         gotoxy(2, 17);
-        printf("¸Â¾Ò½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¸é ´Ù½Ã ½ÃÀÛÇÕ´Ï´Ù.");
+        printf("ë§ì•˜ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ë©´ ë‹¤ì‹œ ì‹œì‘í•©ë‹ˆë‹¤.");
         getch();
         clear_text();
     }
@@ -259,17 +260,17 @@ void game_control(char question[][10], int n, int *count)
         printf("%2d", user2);
 
         gotoxy(32, 5);
-        printf("Æ²¸° È½¼ö: %d\n", wrong_count);
+        printf("í‹€ë¦° íšŸìˆ˜: %d\n", wrong_count);
 
         gotoxy(2, 18);
-        printf("Æ²·È½À´Ï´Ù. ¾Æ¹«Å°³ª ´©¸£¸é ½ÃÀÛÇÕ´Ï´Ù. ");
+        printf("í‹€ë ¸ìŠµë‹ˆë‹¤. ì•„ë¬´í‚¤ë‚˜ ëˆ„ë¥´ë©´ ì‹œì‘í•©ë‹ˆë‹¤. ");
 		getch();
         clear_text();
 
         if (wrong_count >= 5) 
         {
             gotoxy(2, 20);
-            printf("Æ²¸° È½¼ö°¡ 5¹øÀ» ÃÊ°úÇß½À´Ï´Ù. °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.\n");
+            printf("í‹€ë¦° íšŸìˆ˜ê°€ 5ë²ˆì„ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤. ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
             exit(0);
         }
     }
@@ -373,52 +374,52 @@ void draw_check02(int r, int c)
 {
     int i, j;
 
-    printf(" ¦£");
+    printf(" â”Œ");
     for (j = 0; j < c; j++) 
 	{
-        printf("¦¡¦¡¦¡");
+        printf("â”€â”€â”€");
         if (j < c - 1) 
 		{
-            printf("¦¨");
+            printf("â”¬");
         }
     }
-    printf("¦¤\n");
+    printf("â”\n");
 
     for (i = 0; i < r; i++) 
 	{
-        printf(" ¦¢");
+        printf(" â”‚");
         for (j = 0; j < c; j++) 
 		{
             printf("   ");
-            printf("¦¢");
+            printf("â”‚");
         }
         printf("\n");
         
         if (i < r - 1) 
 		{
-            printf(" ¦§");
+            printf(" â”œ");
             for (j = 0; j < c; j++) 
 			{
-                printf("¦¡¦¡¦¡");
+                printf("â”€â”€â”€");
                 if (j < c - 1) 
 				{
-                    printf("¦«");
+                    printf("â”¼");
                 }
             }
-            printf("¦©\n");
+            printf("â”¤\n");
         }
     }
 
-    printf(" ¦¦");
+    printf(" â””");
     for (j = 0; j < c; j++) 
 	{
-        printf("¦¡¦¡¦¡");
+        printf("â”€â”€â”€");
         if (j < c - 1) 
 		{
-            printf("¦ª");
+            printf("â”´");
         }
     }
-    printf("¦¥\n");
+    printf("â”˜\n");
 }
 
 void gotoxy(int x, int y)
